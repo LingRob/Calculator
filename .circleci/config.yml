@@ -9,7 +9,8 @@ jobs:
     steps:
       - run:
           name: Setting Directory 
-          command : echo ls
+          command : ls
+          command : echo "hey"
       - checkout
       - node/install-packages # install dependencies with caching
       - run:
