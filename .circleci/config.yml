@@ -8,8 +8,8 @@ jobs:
      
     steps:
       - run:
-          name: Settign Directory 
-          command : cd ExampleApplication
+          name: Setting Directory 
+          command : echo ls
       - checkout
       - node/install-packages # install dependencies with caching
       - run:
