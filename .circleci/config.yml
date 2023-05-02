@@ -2,25 +2,37 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 
+orbs:
+  node: circleci/node@5.0.2 # use the node orb to install node and npm
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   say-hello:
-    # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/configuration-reference/#executor-job
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
       - run:
           name: "Say hello"
           command: "echo Hello, Woorld!"
-
+   
+  build_and_test:
+    executor: node/default # use the default executor defined within the orb
+    working_directory : ~/ExampleApplication/ExampleApplication
+    steps:
+      - checkout
+      - node/install-packages # install dependencies with caching
+      - run:
+          name: Build app
+          command: npm run build # run your build script
+      - run:
+          name: Test app
+          command: npm test # run your test script
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
+
 workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - build_and_test
+      
