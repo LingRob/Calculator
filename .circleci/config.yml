@@ -4,6 +4,7 @@ orbs:
 jobs:
   build_and_test:
     executor: node/default # use the default executor defined within the orb
+    working_directory: ~/ExampleApplication/ExampleApplication/
     steps:
       - checkout
       - node/install-packages # install dependencies with caching
