@@ -22,7 +22,9 @@ jobs:
             npm install  
       - run:
           name: Test app
-          command: npm test # run your test script
+          command: |
+            cd ExampleApplication
+            npm test 
   deploy:
     executor: node/default
     steps:
