@@ -13,6 +13,8 @@ jobs:
          
       - checkout
       - node/install-packages # install dependencies with caching
+           app-dir: ExampleApplication-main/ExampleApplication
+           
       - run:
           name: Build app
           command: npm run build # run your build script
