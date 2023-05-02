@@ -12,7 +12,7 @@ jobs:
           command : ls
          
       - checkout
-      - node/install-packages # install dependencies with caching
+      - node/install-packages: # install dependencies with caching
            app-dir: ExampleApplication-main/ExampleApplication
            
       - run:
