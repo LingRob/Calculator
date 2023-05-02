@@ -17,7 +17,9 @@ jobs:
            
       - run:
           name: Build app
-          command: npm install # run your build script
+          command: |
+            cd ExampleApplication
+            npm install  
       - run:
           name: Test app
           command: npm test # run your test script
