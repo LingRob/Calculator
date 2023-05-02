@@ -13,7 +13,7 @@ jobs:
          
       - checkout
       - node/install-packages: # install dependencies with caching
-           app-dir: ExampleApplication/ExampleApplication
+           app-dir: ExampleApplication/
            
       - run:
           name: Build app
