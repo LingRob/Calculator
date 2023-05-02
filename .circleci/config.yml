@@ -5,10 +5,11 @@ jobs:
   build_and_test:
     executor: node/default # use the default executor defined within the orb
 #     working_directory: ~/ExampleApplication/
-    run:
-      name: Settign Directory 
-      command : cd ExampleApplication 
+     
     steps:
+      - run:
+          name: Settign Directory 
+          command : cd ExampleApplication
       - checkout
       - node/install-packages # install dependencies with caching
       - run:
