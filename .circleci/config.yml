@@ -35,7 +35,8 @@ jobs:
           command: |
             cd ExampleApplication
             ls
-          
+            ssh -i "mywebserverkey.pem" ec2-user@ec2-3-145-59-151.us-east-2.compute.amazonaws.com
+            
  
  
 
