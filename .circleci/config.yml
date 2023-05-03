@@ -35,7 +35,7 @@ jobs:
     executor: node/default
     
     steps:
-      -run:
+      - run:
         name: Setting Directory
         command : ls
 
