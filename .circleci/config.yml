@@ -33,7 +33,7 @@ jobs:
  
  
     verify-deployment:
-#     executor: aws-cli/default
+    executor: aws-cli/default
     steps:
       - aws-cli/install
       - aws-cli/setup:
