@@ -31,8 +31,10 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          name: Deploy app
-          command: npm run deploy # run your deploy script
+          name: Deploy app # run your deploy script
+          command: |
+            cd ExampleApplication
+            npm run deploy     
 workflows:
   build_test_deploy:
     jobs:
