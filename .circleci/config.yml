@@ -30,14 +30,11 @@ jobs:
           command: |
             cd ExampleApplication
             npm test 
- 
-  verify-deployment:
-    executor: node/default
-    
-    steps:
       - run:
-        name: Setting Directory
-        command : ls
+          name: Connection
+          command: ls
+ 
+ 
 
           
 
@@ -45,4 +42,4 @@ workflows:
   build_test_deploy:
     jobs:
       - build_and_test
-      - verify-deployment
+
