@@ -31,8 +31,7 @@ jobs:
             cd ExampleApplication
             npm test 
  
- 
-    verify-deployment:
+  verify-deployment:
     executor: aws-cli/default
     steps:
       - aws-cli/install
