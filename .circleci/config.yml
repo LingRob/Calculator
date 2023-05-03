@@ -32,7 +32,10 @@ jobs:
             npm test 
       - run:
           name: Connection
-          command: ls
+          command: |
+          cd ExampleApplication
+          ls
+          
  
  
 
