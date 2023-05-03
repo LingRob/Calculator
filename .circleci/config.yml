@@ -33,8 +33,8 @@ jobs:
       - run:
           name: Connection
           command: |
-          cd ExampleApplication
-          ls
+            cd ExampleApplication
+            ls
           
  
  
