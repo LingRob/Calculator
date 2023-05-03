@@ -31,7 +31,15 @@ jobs:
             cd ExampleApplication
             npm test 
  
- # verify-deployment:
+  verify-deployment:
+    executor: node/default
+    
+    steps:
+      -run:
+        name: Setting Directory
+        command : |
+        ls
+        echo
 
           
 
@@ -39,4 +47,4 @@ workflows:
   build_test_deploy:
     jobs:
       - build_and_test
-#       - verify-deployment:
+      - verify-deployment
