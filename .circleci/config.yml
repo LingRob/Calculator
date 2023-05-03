@@ -29,7 +29,8 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages
+      - node/install-packages:
+          app-dir: ExampleApplication/
       - run:
           name: Deploy app # run your deploy script
           command: |
